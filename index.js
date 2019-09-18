@@ -135,8 +135,11 @@ module.exports = function (config) {
     ffmpegArgs = ffmpegArgs.concat(outputOptions).concat(['-y', output]);
     convertProcess = spawn('/opt/bin/ffmpeg', ffmpegArgs);
     convertProcess.stderr.setEncoding('utf8');
+    convertProcess.stdout.on('data', function (data) {
+      console.log(data);
+    });
     convertProcess.stderr.on('data', function (data) {
-      log(data);
+      console.log(data);
     });
     return new Promise(function (resolve, reject) {
       convertProcess.on('close', function () {
