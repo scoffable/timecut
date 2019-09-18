@@ -133,7 +133,7 @@ module.exports = function (config) {
     }
     // -y writes over existing files
     ffmpegArgs = ffmpegArgs.concat(outputOptions).concat(['-y', output]);
-    convertProcess = spawn('ffmpeg', ffmpegArgs);
+    convertProcess = spawn('/opt/bin/ffmpeg', ffmpegArgs);
     convertProcess.stderr.setEncoding('utf8');
     convertProcess.stderr.on('data', function (data) {
       log(data);
