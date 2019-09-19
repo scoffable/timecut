@@ -48,10 +48,10 @@ const makeFileDirectoryIfNeeded = function (filepath) {
 };
 
 const deleteFolder = function (dir) {
-  // fs.readdirSync(dir).forEach(function (file) {
-  //   fs.unlinkSync(path.join(dir, file));
-  // });
-  // fs.rmdirSync(dir);
+  fs.readdirSync(dir).forEach(function (file) {
+    fs.unlinkSync(path.join(dir, file));
+  });
+  fs.rmdirSync(dir);
 };
 
 const argumentArrayContains = function (args, item) {
