@@ -97,7 +97,7 @@ module.exports = function (config) {
     output: '',
     outputPattern: outputPattern,
     fps: config.fps,
-    duation: config.duration
+    duration: config.duration
   });
 
   if (config.fps) {
