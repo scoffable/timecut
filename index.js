@@ -48,10 +48,10 @@ const makeFileDirectoryIfNeeded = function (filepath) {
 };
 
 const deleteFolder = function (dir) {
-  fs.readdirSync(dir).forEach(function (file) {
-    fs.unlinkSync(path.join(dir, file));
-  });
-  fs.rmdirSync(dir);
+  // fs.readdirSync(dir).forEach(function (file) {
+  //   fs.unlinkSync(path.join(dir, file));
+  // });
+  // fs.rmdirSync(dir);
 };
 
 const argumentArrayContains = function (args, item) {
@@ -95,7 +95,9 @@ module.exports = function (config) {
   }
   var timesnapConfig = Object.assign({}, config, {
     output: '',
-    outputPattern: outputPattern
+    outputPattern: outputPattern,
+    fps: config.fps,
+    duation: config.duration
   });
 
   if (config.fps) {
